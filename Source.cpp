@@ -3,16 +3,18 @@
 #include <string>
 using namespace std;
 int main(){
-	string userResponse, maincolor;
+	string userResponse, mainColor;
 	//Ben's Rules
-	bool choanoflagellate = true, animalia = false, multicellular = false, diploblastic = false, porifera = false, triploblastic = false, acoela = false;
-	bool CNS = false, coelem = false, cephalization = false, protostome = false, deuterostome = false, platyhelminthes = false, annelida = false;
-	bool echinodermata = false, chordata = false, arthropoda = false, nematoda = false;
+	bool choanoflagellate = true, animalia = false, multicellular = false, diploblastic = false, porifera = false, triploblastic = false, cnidaria = false, acoela = false;
+	bool CNS = false, coelem = false, cephalization = false, protostome = false, deuterostome = false, platyhelminthes = false, annelida = false, rotifera = false;
+	bool mollusca = false, echinodermata = false, chordata = false, arthropoda = false, nematoda = false, invertebrate = false, vertebrate = false, lungs = false;
+	bool jaw = false, limbs = false, amnioticEgg = false, lactation = false, fish = false, sandDollar = false, seaUrchin = false, starfish = false;
 	//Samier's Rules
 	bool lophotrochozoan = false, ecdysozoan = false;
 	//Cj's Rules
 	bool shell = false, fur = false, claws = false, pincers = false, exoskeleton = false, warmblood = false, scales = false, herbivore = false, carnivore = false;
-	bool whiskers = false, scales = false, water = false, saltwater= false, freshwater = false, changecolor = false, domesticated = false, 
+	bool whiskers = false, water = false, saltwater= false, freshwater = false, changecolor = false, domesticated = false;
+
 
 
 	cout<<"Is your organism a Choanoflagellate?"<<endl;
@@ -28,15 +30,16 @@ int main(){
 		animalia = true;
 		multicellular = true;
 
-		cout<<"This means your organism is multicellular and belongs to the kingdom Animalia"<<endl;
+		cout<<"Your organism is multicellular and belongs to the kingdom Animalia"<<endl;
 	}
-	cout<<"Is your animal Diploblastic?"<<endl;
+	cout<<"Is your animal Diploblastic or Triploblastic?"<<endl;
 	cin>>userResponse;
 	if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
 		diploblastic = true;
 	}
 	else{//The Porifera Else
 		//Can ask about specific types of porifera or just end
+		cout<<"Your animal is diploblastic"<<endl;
 		diploblastic = false;
 		porifera = true;
 		cout<<"Your animal belongs to the phylum porifera"<<endl;
@@ -49,9 +52,10 @@ int main(){
 		triploblastic = true;
 		diploblastic = false;
 	}
-	else{   //The Ctenophora and Cnidaria Else
-		//FILL THIS IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		//Must ask questions to differ between Ctenophora and Cnidaria then jellyfish vs corals vs sea anemones
+	else{   //The Cnidaria Else
+		//In my class we grouped Ctenophora and Cnidaria into one group; we just called them all Cnidaria
+		//Ask questions to differ jellyfish vs corals vs sea anemones
+		cnidaria = true;
 		diploblastic = true;
 		cout<<" "<<endl;
 	}
@@ -113,17 +117,109 @@ int main(){
 		
 		//All Specific Echinoderm Questions
 
-
-
-
+		cout<<"Does your animal have spikes all over its body?"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		seaUrchin = true;
+		cout<<"Your animal is a Sea Urchin"<<endl;
+		system("pause");
+		return 0;
+	}
+	else{
+		seaUrchin = false;
+		cout<<"Is your animal flat and round"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		sandDollar = true;
+		cout<<"Your animal is a Sand Dollar"<<endl;
+		system("pause");
+		return 0;
+	}
+	else{
+		sandDollar = false;
+		cout<<"Is your animal star shaped?"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		starfish = true;
+	}
+	else{
+		starfish = false;
+		cout<<"Your animal is some type of Echinoderm which is a Phylum that contains sea stars, sand dollars, or sea urchins"<<endl;
+		system("pause");
+		return 0;
+	}
+	}
+	}
 	}
 	//All Specific Chordata Questions
-	
+		cout<<"Is your animal an invertebrate?"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		vertebrate = false;
+		invertebrate = true;
+		//Ask questions about all invertebrate chordates
+	}
+	else{
+		//Ask questions about all vertebrate chordates
+		vertebrate = true;
+		invertebrate = false;
+
+			cout<<"Does your live only in the water?"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		fish = true;
+		lungs = false;
+
+			cout<<"Does your animal have a jaw?"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		jaw = true;
+		//Do shark and one or two other types of fish, maybe whale(herbivore and carnivore then)
 
 	}
+	else{
+		jaw = false;
+			cout<<"Your animal is a Hagfish: a jawless chordate vertebrate"<<endl;
+		system("pause");
+		return 0;
+	}
+	}
+	else{
+		fish = false;
+		lungs = true;
+		limbs = true;
+		cout<<"Does your animal have an amniotic egg?"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		amnioticEgg = true;
+				cout<<"Does your animal lactate?"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		lactation = true;
+		cout<<"Your animal is a mammal"<<endl;
+		//Can further this branch with different mammals
+		system("pause");
+		return 0;
+	}
+	else{
+		lactation = false;
+		cout<<"Your animal is a reptile"<<endl;
+		//Can further this branch with different reptiles
+		system("pause");
+		return 0;
+	}
 
-
-
+	}
+	else{
+		amnioticEgg = false;
+		cout<<"Your animal is an amphibian"<<endl;
+		//Can further this branch with different amphibians
+		system("pause");
+		return 0;
+	}		
+	}
+	}
+	}
 	//All Protostome questions below(PURPLE)
 	cout<<"Does your animal keep its coelem?"<<endl;
 		cin>>userResponse;
@@ -172,8 +268,22 @@ int main(){
 	}
 	else{
 		annelida = false;
-		//Differentiate between Rotifera and Mollusca Below
+		//All Specific Mollusca Below
+			cout<<"Does your animal tend to have a shell?"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		shell = true;
+		mollusca = true;
+		rotifera = false;
+			
+	}
+	else{
+		//Maybe do not have specific rotifer questions
+		shell = false;
+		mollusca = false;
+		rotifera = true;
 
+	}
 	}
 		//All Specific Annelida Questions
 
