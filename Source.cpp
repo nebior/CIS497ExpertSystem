@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 int main(){
-	string userResponse;
+	string userResponse, maincolor;
 	//Ben's Rules
 	bool choanoflagellate = true, animalia = false, multicellular = false, diploblastic = false, porifera = false, triploblastic = false, acoela = false;
 	bool CNS = false, coelem = false, cephalization = false, protostome = false, deuterostome = false, platyhelminthes = false, annelida = false;
@@ -11,7 +11,8 @@ int main(){
 	//Samier's Rules
 	bool lophotrochozoan = false, ecdysozoan = false;
 	//Cj's Rules
-
+	bool shell = false, fur = false, claws = false, pincers = false, exoskeleton = false, warmblood = false, scales = false, herbivore = false, carnivore = false;
+	bool whiskers = false, scales = false, water = false, saltwater= false, freshwater = false, changecolor = false, domesticated = false, 
 
 
 	cout<<"Is your organism a Choanoflagellate?"<<endl;
