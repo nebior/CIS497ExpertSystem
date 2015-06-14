@@ -10,7 +10,7 @@ int main(){
 	bool mollusca = false, echinodermata = false, chordata = false, arthropoda = false, nematoda = false, invertebrate = false, vertebrate = false, lungs = false;
 	bool jaw = false, limbs = false, amnioticEgg = false, lactation = false, fish = false, sandDollar = false, seaUrchin = false, starfish = false;
 	//Samier's Rules
-	bool lophotrochozoan = false, ecdysozoan = false, tentacles = false, water95 = false, selfMovement = false, hingedPlates = false;
+	bool lophotrochozoan = false, ecdysozoan = false, tentacles = false, water95 = false, selfMovement = false, hingedPlates = false, externalshell = false;
 	//Cj's Rules
 	bool shell = false, fur = false, claws = false, pincers = false, exoskeleton = false, warmblood = false, scales = false, herbivore = false, carnivore = false;
 	bool whiskers = false, water = false, saltwater= false, freshwater = false, changecolor = false, domesticated = false;
@@ -319,7 +319,21 @@ int main(){
 		return 0;
 	}
 	else{
-		hingedPlates = false;		
+		hingedPlates = false;	
+		cout<<"Does your animal have an external shell?"<<endl;
+		cin>>userResponse;
+		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		externalshell = true;
+		cout <<"Your animal is a Snail." <<endl;
+		system("pause");
+		return 0;
+		 }
+		else{
+	    externalshell=false;
+        cout<<"Your animal is a Squid."<<endl;
+  system("pause");
+  return 0;
+ }
 	}
 	}
 	else{//Rotifer Else 
