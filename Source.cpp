@@ -15,11 +15,13 @@ int main(){
 	bool bushytail = false, retractClaws = false, internalshell= false,pearls = false,jungle = false, predatorJungle = false, spotted= false, stripes = false,primate = false;//9
 	bool LargePrimate= false, forest = false, hooves = false, antlers =false, LargeForest = false;//5
 	//Cj's Rules
-	bool shell = false, domesticated = false, carnivore = false, canis = false,freshwater = false, claws = false; //6
-
+	bool shell = false, domesticated = false, carnivore = false, canis = false, freshwater = false, claws = false, legs = false, whiteBird = false, cityBird = false; //9
+	bool fishcatch = false, biggrey = false, trunk = false, rhino = false, jungleBird = false, venomous = false, constrict = false, gardensnake = false;//8
+	bool changecolor = false, bigliz = false, standinwater = false, greenreptile = false, standardliz = false, frog = false, tomato = false, greentoad = false;//8
+	bool bullfrog = false, orangefrog = false, salamander = false, blackwhite = false, slender = false;//5
 	//NOT USED YET
-	bool fur = false, pincers = false, exoskeleton = false, warmblood = false, scales = false, herbivore = false;
-	bool whiskers = false, water = false, saltwater= false, changecolor = false; 
+	bool pincers = false, exoskeleton = false, warmblood = false, scales = false, herbivore = false;
+	bool whiskers = false, water = false, saltwater = false;
 
 
 
@@ -190,7 +192,7 @@ int main(){
 	}
 	}
 	else{
-		cout<<"Your animal is some type of fish with jaws that does not filter feed or have a top fin"<<cout;
+		cout<<"Your animal is some type of fish with jaws that does not filter feed or have a top fin"<<endl;
 		system("pause");
 		return 0;
 	}
@@ -247,7 +249,16 @@ cin>>userResponse;
  }
  else{
   retractClaws = false; 
-  cout<<"Your animal is a another household pet."<<endl;
+  cout << "Is your household pet long and slender?" << endl;
+  cin >> userResponse;
+  if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+  {
+	  slender = true;
+	  cout << "Your animal is a Ferret." << endl;
+	  system("pause");
+	  return 0;
+  }
+  cout<<"Your animal is another household pet."<<endl;
   system("pause");
   return 0;
  }
@@ -260,7 +271,7 @@ cin>>userResponse;
 		cout<<"Is your animal a carnivore?"<<endl;	
 		cin>>userResponse;
 		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
-		carnivore = true;//Carnivores
+		carnivore = true;//City Carnivores
 		cout<<"Does your animal have a small tail?"<<endl; 
 		cin>>userResponse;
 		 if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
@@ -278,7 +289,7 @@ cin>>userResponse;
 
 	}
 	else{
-		carnivore = false;	//Herbivores
+		carnivore = false;	//City Herbivores
 
 cout<<"Does your animal have a large bushy tail?"<<endl; 
 		cin>>userResponse;
@@ -337,7 +348,7 @@ cout<<"Does your animal have a large bushy tail?"<<endl;
  }
 	
 	}
-	else{ //If your animal ives in the jungle but isn't a predator
+	else{ //If your animal lives in the jungle but isn't a predator
 	predatorJungle = false; 
 	cout<<"Is your animal a Primate?"<<endl; 
 	cin>>userResponse;
@@ -360,7 +371,29 @@ cin>>userResponse;
  }
  else{
   primate = false; 
+  cout << "Is your animal big and grey?" << endl;
+  cin >> userResponse;
+  if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+	  biggrey = true;
+	  cout << "Does your animal have a trunk?" << endl;
+	  cin >> userResponse;
+	  if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+	  {
+		  trunk = true;
+		  cout << "Your animal is an elephant." << endl;
+		  system("pause");
+		  return 0;
+	  }
+	  else{
+		  rhino = true;
+		  cout << "Your animal is a Rhino." << endl;
+		  system("pause");
+		  return 0;
+	  }
+  }
   cout <<"Your animal is another non-predatory mammal." <<endl;
+  system("pause");
+  return 0;
  }
 	}
   
@@ -460,10 +493,18 @@ cin>>userResponse;
 		predatorBird = true;
 		//Predatory Birds
 
-		cout<<"Does your catch live prey?"<<endl;	
-cin>>userResponse;
+		cout<<"Does your animal catch live prey?"<<endl;	
+		cin>>userResponse;
 		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
 		livePrey = true;
+		cout << "Does your animal catch fish with their mouth?" << endl;
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+			fishcatch = true;
+			cout << "Your animal is a pelican." << endl;
+			system("pause");
+			return 0;
+		}
 		cout<<"Your bird is an Eagle"<<endl;
 		system("pause");
 		return 0;
@@ -503,9 +544,44 @@ cin>>userResponse;
 	}
 	else{
 		blueBird = false;	
-		cout<<"Your animal is some sort of non-predatory bird"<<endl;
-		system("pause");
-		return 0;
+		cout<<"Is your bird white?"<<endl;
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+		{
+			whiteBird = true;
+			cout << "Your animal is a seagull." << endl;
+			system("pause");
+			return 0;
+		}
+		else
+		{
+			cout << "Is your animal generally found in cities?" << endl;
+			cin >> userResponse;
+			if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+			{
+				cityBird = true;
+				cout << "Your animal is a sparrow." << endl;
+				system("pause");
+				return 0;
+			}
+			else
+			{
+				cout << "Is your animal a jungle bird?" << endl;
+				cin >> userResponse;
+				if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+					jungleBird = true;
+					cout << "Your animal is a Toucan." << endl;
+					system("pause");
+					return 0;
+				}
+				else{
+					cout << "Your animal is some other type of bird." << endl;//Unsusccessful Bird find.
+					system("pause");
+					return 0;
+				}
+			}
+		}
+		
 	}
 	}
 	}
@@ -515,9 +591,85 @@ cin>>userResponse;
 		legsUnderneath = false;	
 		cout<<"Your animal is a type of reptile"<<endl;
 		//Types of Reptiles
-
-
-
+		cout << "Does your animal have legs?" << endl;
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+			legs = true;
+		}
+		if (legs == false)
+		{
+			cout << "Is your animal venomous?" << endl;
+			cin >> userResponse;
+			if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+				venomous = true;
+				cout << "Your animal is a rattlesnake." << endl;
+				system("pause");
+				return 0;
+			}
+			cout << "Does your animal constrict it's prey to death?" << endl;
+			cin >> userResponse;
+			if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+				constrict = true;
+				cout << "Your animal is a Boa Constrictor." << endl;
+				system("pause");
+				return 0;
+			}
+			else
+			{
+				gardensnake = true;
+				cout << "Your animal is a Garden Snake." << endl;
+				system("pause");
+				return 0;
+			}
+			cout << "Your animal is some other type of snake." << endl;
+			system("pause");
+			return 0;
+		}
+		cout << "Does your animal live in a shell?" << endl;
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+			shell = true;
+			cout << "Your animal is a turtle." << endl;
+			system("pause");
+			return 0;
+		}
+		cout << "Does your animal like to sit in water ? " << endl;
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+			standinwater = true;
+			cout << "Your animal is a Crocodile." << endl;
+			system("pause");
+			return 0;
+		}
+		cout << "Does your animal change colors?" << endl;
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+			changecolor = true;
+			cout << "Your animal is a Chameleon." << endl;
+			system("pause");
+			return 0;
+		}
+		cout << "Is your reptile green?" << endl;
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+			greenreptile = true;
+			cout << "Your animal is a gecko." << endl;
+			system("pause");
+			return 0;
+		}
+		cout << "Is your animal a large size?" << endl;
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+		{
+			bigliz = true;
+			cout << "Your animal is a Komodo Dragon." << endl;
+			system("pause");
+			return 0;
+		}
+		standardliz = true;
+		cout << "Your animal is a standard lizard." << endl;
+		system("pause");
+		return 0;
 
 
 	}
@@ -527,6 +679,62 @@ cin>>userResponse;
 		amnioticEgg = false;
 		cout<<"Your animal is an amphibian"<<endl;
 		//Can further this branch with different amphibians
+		cout << "Is your animal a type of frog?" << endl;		//Frogs
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+		{
+			frog == true;
+			cout << "Is your frog bright orange?" << endl;
+			cin >> userResponse;
+			if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+			{
+				orangefrog = true;
+				cout << "Your animal is a Gold Mantella." << endl;
+				system("pause");
+				return 0;
+			}
+			cout << "Is your frog big and red?" << endl;
+			cin >> userResponse;
+			if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+			{
+				tomato = true;
+				cout << "Your animal is a Tomato Frog." << endl;
+				system("pause");
+				return 0;
+			}
+			cout << "Is your frog green?" << endl;
+			cin >> userResponse;
+			if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+			{
+				greentoad = true;
+				cout << "Your animal is a European Green Toad." << endl;
+				system("pause");
+				return 0;
+			}
+			bullfrog = true;
+			cout << "Your animal is an American Bullfrog." << endl;
+			system("pause");
+			return 0;
+		}
+		cout << "Is your animal a type of salamander?" << endl;		//Salamanders
+		cin >> userResponse;
+		if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+		{
+			salamander = true;
+			cout << "Is your animal black and White?" << endl;
+			cin >> userResponse;
+			if (userResponse == "yes" || userResponse == "y" || userResponse == "Yes")
+			{
+				blackwhite = true;
+				cout << "Your animal is a Marbled Salamander." << endl;
+				system("pause");
+				return 0;
+			}
+			cout << "Your animal is some other type of salamander." << endl;
+			system("pause");
+			return 0;
+		}
+		cout << "Your animal is a newt." << endl;
 		system("pause");
 		return 0;
 	}		
