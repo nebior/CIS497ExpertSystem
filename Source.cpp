@@ -11,13 +11,15 @@ int main(){
 	bool jaw = false, limbs = false, amnioticEgg = false, lactation = false, fish = false, feared = false, predatorBird = false;//7
 	//Samier's Rules
 	bool lophotrochozoan = false, ecdysozoan = false, tentacles = false, water95 = false, selfMovement = false, hingedPlates = false, externalshell = false;//7
-	bool squid = false, filterFeed = false, topfin = false, legsUnderneath = false, foundInCity = false, livePrey = false, blueBird = false;//7
+	bool squid = false, filterFeed = false, topfin = false, legsUnderneath = false, foundInCity = false, livePrey = false, blueBird = false, smalltail = false;//8
+	bool bushytail = false, retractClaws = false, internalshell= false,pearls = false,jungle = false, predatorJungle = false, spotted= false, stripes = false,primate = false;//9
+	bool LargePrimate= false, forest = false, hooves = false, antlers =false, LargeForest = false;//5
 	//Cj's Rules
-	bool shell = false, domesticated = false, carnivore = false;
+	bool shell = false, domesticated = false, carnivore = false, canis = false,freshwater = false, claws = false; //6
 
 	//NOT USED YET
-	bool fur = false, claws = false, pincers = false, exoskeleton = false, warmblood = false, scales = false, herbivore = false;
-	bool whiskers = false, water = false, saltwater= false, freshwater = false, changecolor = false; 
+	bool fur = false, pincers = false, exoskeleton = false, warmblood = false, scales = false, herbivore = false;
+	bool whiskers = false, water = false, saltwater= false, changecolor = false; 
 
 
 
@@ -224,28 +226,74 @@ int main(){
 cin>>userResponse;
 		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
 		domesticated = true;
-		//Domesticated Animals
-		//DO NOT LEAVE THIS BLANK MUST
+		//Domesticated Animals found in city
+		cout << "Is it of the Canis genus?" <<endl; 
+cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+  canis=true;
+  cout<<"Your animal is a Dog."<<endl;
+  system("pause");
+  return 0;
+ }
+ else{
+  canis = false; 
+  cout <<"Does your animal have retractable claws?"<<endl;
+cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+  retractClaws = true;
+  cout<<"Your animal is a Cat."<<endl;
+  system("pause");
+  return 0;
+ }
+ else{
+  retractClaws = false; 
+  cout<<"Your animal is a another household pet."<<endl;
+  system("pause");
+  return 0;
+ }
+ }
+		
 	}
 	else{
 		domesticated = false;	
-		//Non-Domesticated Animals
-			
+		//Non-Domesticated Animals found in city	
 		cout<<"Is your animal a carnivore?"<<endl;	
 		cin>>userResponse;
 		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
 		carnivore = true;//Carnivores
-	
-
-
+		cout<<"Does your animal have a small tail?"<<endl; 
+		cin>>userResponse;
+		 if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		smalltail = true;
+		cout<<"Your animal is a Wolf. A Non-Demosticated carnivore mammal found in the city with a small tail."<<endl;
+		system("pause");
+		return 0;
+		}
+ else{
+  smalltail = false;
+  cout <<"Your animal is a fox. A Non-Demosticated carnivore mammal found in the city with a large bushy tail. " <<endl;
+  system("pause");
+		return 0;
+ }
 
 	}
 	else{
 		carnivore = false;	//Herbivores
 
-
-
-
+cout<<"Does your animal have a large bushy tail?"<<endl; 
+		cin>>userResponse;
+		 if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+		bushytail = true;
+		cout<<"Your animal is a Squirrel. A Non-Demosticated herbivore mammal found in the city with a large bushy tail."<<endl;
+		system("pause");
+		return 0;
+		}
+ else{
+  bushytail = false;
+  cout <<"Your animal is a Rabbit. A Non-Demosticated herbivore mammal found in the city with a small tail. " <<endl;
+  system("pause");
+		return 0;
+ }
 
 	}
 
@@ -254,8 +302,131 @@ cin>>userResponse;
 	}
 	else{
 		foundInCity = false;
-		//Animals Not found in cities
-		//DO NOT LEAVE THIS BLANK MUST
+  cout<<"Does your animal have live in the jungle?"<<endl; 
+  cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+  jungle = true;
+  cout<<"Is your animal a predator? "<<endl; 
+	cin>>userResponse;
+	if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+	predatorJungle = true;
+	cout<<"Is your animal Spotted?"<<endl;
+	cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ //If your animal lives in the jungle and is a predator and is spotted
+  spotted = true;
+  cout<<"Your animal is a Lepoard"<<endl;
+  system("pause");
+  return 0;
+ }
+ else{ // If your animal isn't spotted but it is a predator 
+  spotted = false; 
+  cout<<"Does your animal have stripes"<<endl; 
+	cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+  stripes = true;
+  cout<<"Your animal is a Tiger"<<endl;
+  system("pause");
+  return 0;
+ }
+ else{ //If your animal isn't spotted but it is a predator and it doesn't have stripes either
+  stripes = false;
+  cout <<"Your animal is a Lion."<<endl;
+  system("pause");
+  return 0;
+ }
+ }
+	
+	}
+	else{ //If your animal ives in the jungle but isn't a predator
+	predatorJungle = false; 
+	cout<<"Is your animal a Primate?"<<endl; 
+	cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ //Your animal is a primate in the jungle
+  primate = true;
+  cout<<"Is your primate large?"<<endl; 
+cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ //Your primate is large
+  LargePrimate = true;
+  cout<<"Your animal is a Gorilla"<<endl;
+  system("pause");
+  return 0;
+ }
+ else{ //Your primate is small
+   LargePrimate = false;
+  cout<<"Your animal is a Chimpanzee"<<endl;
+  system("pause");
+  return 0; }
+  
+ }
+ else{
+  primate = false; 
+  cout <<"Your animal is another non-predatory mammal." <<endl;
+ }
+	}
+  
+ }
+ else{ //MAMMAL NOT LIVING IN CITY OR JUNGLE
+  jungle = false;
+  cout<<"Does your animal live in the Forest?"<<endl; 
+cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){
+  forest = true;
+  cout<<"Does your animal have hooves?"<<endl; 
+cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ //Forest animal with hooves
+  hooves = true;
+  cout<<"Does your animal have Large antlers?"<<endl; 
+cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){  //Forest animal with hooves and antlers
+  antlers = true;
+  cout<<"Your animal is a Moose"<<endl;
+  system("pause");
+  return 0;
+ }
+ else{ //Forest animal with hooves without antlers
+  antlers = false; 
+  cout<<"Your animal is a Deer"<<endl;
+  system("pause");
+  return 0;
+ }
+ }
+ else{ //Forest animal without hooves
+  hooves = false;
+  cout<<"Does your animal have claws?"<<endl; 
+ cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+  claws = true;
+ cout<<"Is your animal Large?"<<endl; 
+cin>>userResponse;
+  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+  LargeForest = true;
+  cout<<"Your animal is a Bear."<<endl;
+  system("pause");
+  return 0;
+ }
+ else{
+  LargeForest = false;
+  cout<<"Your animal is a Beaver."<<endl;
+  system("pause");
+  return 0;
+ }
+ }
+ else{ //A forest mammal without hooves or claws
+  claws = false; 
+  cout << "Your animal is another Forest mammal." <<endl;
+  system("pause");
+  return 0;
+ }
+ }
+
+ }
+ else{//If your mammal doesn't live in the city, jungle, or forest, it falls into here
+  forest = false; 
+  cout <<"Your animal is another mammal." <<endl;
+  system("pause");
+  return 0;
+ }
+ }
 	}
 
 
@@ -438,6 +609,7 @@ cin>>userResponse;
 		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
 		annelida = true;
 		//All Specific Annelida Questions
+		cout <<"Your animal is an Annelida which is a Segemented worm." <<endl;
 	}
 	else{//Mollusca Else
 		annelida = false;
@@ -452,9 +624,29 @@ cin>>userResponse;
 		cin>>userResponse;
 		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
 		hingedPlates = true;
-		cout<<"Your animal is a Clam"<<endl;
-		system("pause");
+		cout<<"Does your animal produce Pearls?"<<endl;
+		  if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+	      pearls = true;
+		  cout<<"Your animal is an Oyster."<<endl; //If it has two hinged plates and produces pearls it is an Oyster
+          system("pause");
+          return 0;
+ }
+ else{
+   cout<<"Does your animal typically live in freshwater?"<<endl;
+     if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
+  freshwater = true;
+  cout<<"Your animal is a Clam"<<endl; //If it has two hinged plates and lives in freshwater it is an clam
+  system("pause");
+  return 0;
+ }
+ else{
+  freshwater = false; 
+  cout <<"Your animal is another Mollusc found in the Bivalvia class."<<endl; //If It has two hinged plates but does not specifically fall in the other catagories its another Mollusc
+	    system("pause");
 		return 0;
+ }
+ }
+	
 	}
 	else{
 		hingedPlates = false;	
@@ -467,16 +659,26 @@ cin>>userResponse;
 		return 0;
 		 }
 		else{
-		cout<<"Does your animal have tentacles?"<<endl;
+		cout<<"Does your animal have tentacles?"<<endl; //This Mollusc does not have an external shell, most likely an internal one, checkfuther
 		cin>>userResponse;
 		if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ 
-		squid = true;
+		tentacles = true;
+		cout<<"Does your animal have an Internal Shell?"<<endl;
+		 if(userResponse == "yes" || userResponse == "y" || userResponse == "Yes"){ //If the Mollusc does have tentacles and an internal shell it is an octopus
+		internalshell= true;
 		cout<<"Your animal is a Squid"<<endl;
 		system("pause");
 		return 0;
+		 }
+		else{
+		internalshell = false;  //If the Mollusc does have tentacles but no internal shell it is an octopus
+		cout<<"Your animal is a Octopus."<<endl;
+		system("pause");
+		return 0;
+		}
 	}
 	else{
-		squid = false;
+		squid = false; //
 		cout<<"Your animal is some type of Mollusc"<<endl;
 		system("pause");
 		return 0;
